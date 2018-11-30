@@ -6,6 +6,14 @@
 <body>
 	<h1>Température</h1>
 
+	<?php
+		$json_url = data.txt;
+		$json = file_get_contents(json_url);
+		$data = json_decode($json, true);
+		print_r($data);
+	?>
+
+
 	<img src="imgs/thermometer.jpg">
 </body>
 </html>
