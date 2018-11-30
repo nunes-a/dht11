@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>thermometer</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<h1>Température</h1>
@@ -16,6 +17,6 @@
 
 	<div id="thermometer">
 	<div id="bargraph"></div>
-	
+
 </body>
 </html>
