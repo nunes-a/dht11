@@ -8,8 +8,8 @@ else
 	echo "erreur";
 */
 
-if(isset($_POST["temperature"])){
-	$temperature = $_POST["temperature"];
+if(isset($_POST["data"])){
+	$temperature = $_POST["data"];
 	$filename_temperature = "data.txt";
 
 	$op = file_put_contents($filename_temperature, $temperature);
