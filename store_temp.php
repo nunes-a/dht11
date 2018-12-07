@@ -10,7 +10,7 @@ else
 
 if(isset($_POST["temperature"])){
 	$temperature = $_POST["temperature"];
-	$filename_temperature = "data.txt";
+	$filename_temperature = "data.json";
 
 	$op = file_put_contents($filename_temperature, $temperature);
 	if(!$op){
