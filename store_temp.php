@@ -1,12 +1,23 @@
 <?php
+/*
 if(isset($_POST['temperature'])){
-	/*test pour garantir */
-
 	if (!file_put_contents("temperature.txt", $_POST['temperature']))
-	/*ce code va ecrire le valeur que nous avons ecrit dans le input avec le name "temperature" dans le fichier "temperature.txt"*/
-		echo "erreur";
+	echo "erreur";
 }
 else
 	echo "erreur";
+*/
 
+if(isset($_POST["temperature"])){
+	$temperature = $_POST["temperature"];
+	$filename_temperature = "data.txt";
+
+	$op = file_put_contents($filename_temperature, $temperature);
+	if(!$op){
+		echo "store error";
+	}
+}
+else{ 
+	"data error";
+}
 ?>

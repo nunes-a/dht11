@@ -3,6 +3,7 @@
 <head>
 	<title>thermometer</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta http-equiv="refresh" content="1">
 </head>
 <body>
 	<h1>Température</h1>
