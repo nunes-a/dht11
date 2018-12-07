@@ -1,23 +1,23 @@
 <?php
-/*
-if(isset($_POST['temperature'])){
-	if (!file_put_contents("temperature.txt", $_POST['temperature']))
-	echo "erreur";
-}
-else
-	echo "erreur";
-*/
-
-if(isset($_POST["data"])){
-	$temperature = $_POST["data"];
-	$filename_temperature = "data.txt";
-
-	$op = file_put_contents($filename_temperature, $temperature);
-	if(!$op){
-		echo "store error";
+	// paramètres
+	$filename_temperature = "data.json";
+	// récupération des données json
+	$data_json = file_get_contents("php://input");
+	// verification du json
+	$data = json_decode($data_json);
+	if (!$data){
+		http_response_code(415);
+		exit();
 	}
-}
-else{ 
-	"data error";
-}
+	else if (!$data->temperature || !$data->humidite){
+		http_response_code(400);
+		exit();
+	}
+	// écriture des données
+	$op = file_put_contents($filename_temperature, $data_json);
+	// vérification de l'écriture des donées
+	if(!$op){
+		http_response_code(500);
+		exit();
+	}
 ?>

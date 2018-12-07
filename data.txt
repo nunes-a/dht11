@@ -1,1 +1,0 @@
-{"temperature":"10","humidite":"45"}

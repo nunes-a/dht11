@@ -12,13 +12,13 @@
 		<?php
 			/*$json_url = "data.txt";
 			$json = file_get_contents($json_url);*/
-			$MaVarAvecContTxt = file_get_contents("data.txt");
+			$MaVarAvecContTxt = file_get_contents("data.json");
 			/*ce code est le même que le code au dessus*/
 			$objJson = json_decode($MaVarAvecContTxt);
 			/*convertir le texte json en object php que je met de dans ma variable*/
 			echo "Il fait ".$objJson->temperature."°C avec ".$objJson->humidite."% d'humidité.";
 			/*afficher le phrase avec les proprietes de l'object (objJson)*/
-			echo "<br>Dernière modification du fichier à " . date ("d/m/Y H:i:s", filemtime("data.txt"));
+			echo "<br>Dernière modification du fichier à " . date ("d/m/Y H:i:s", filemtime("data.json"));
 			/*afficher le date et heure de la derniére modification du fichier data.txt. Avec le "__FILE__" est la date et heure de modification du fichier .html*/
 
 			$baragraph_height = 161 + $objJson->temperature * 4;
